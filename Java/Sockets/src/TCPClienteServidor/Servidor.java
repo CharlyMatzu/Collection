@@ -8,7 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 
-public class Servidor {
+class Servidor {
     
     public static void main(String[] args) {
         new Servidor().iniciar();
@@ -17,7 +17,7 @@ public class Servidor {
     private ServerSocket servidor;
     //Canal de acceso
     private Socket cliente;
-    static final int PUERTO = 9000;
+    static final int PUERTO = 9080;
     private DataOutputStream salida;
     private DataInputStream entrada;
     private String mensaje;
