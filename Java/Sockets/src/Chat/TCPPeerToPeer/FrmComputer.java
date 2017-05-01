@@ -215,7 +215,8 @@ public class FrmComputer extends javax.swing.JFrame {
             int portCliente = Integer.parseInt( port );
             
             //Para evitar que se conecte a si mismo
-            if( servidor.getIP() !=  portCliente ){
+            //TODO: Solo comparar si es en la misma IP
+            //if( servidor.getIP() !=  portCliente ){
                 
                 //Se crea objeto
                 cliente = new Cliente(host, portCliente, this);
@@ -227,9 +228,9 @@ public class FrmComputer extends javax.swing.JFrame {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            } else{
-                JOptionPane.showMessageDialog(this, "Es el mismo puerto de tu SERVER", "Error cliente", JOptionPane.WARNING_MESSAGE);
-            }
+//            } else{
+//                JOptionPane.showMessageDialog(this, "Es el mismo puerto de tu SERVER", "Error cliente", JOptionPane.WARNING_MESSAGE);
+//            }
         }
             
             

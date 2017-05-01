@@ -10,8 +10,9 @@ import java.net.Socket;
 class Cliente {
     public static void main(String[] args) {
         
-        String host = "127.0.0.1";
-        int puerto = Servidor.PUERTO;
+        String host = "10.201.14.231";
+        //int puerto = Servidor.PUERTO;
+        int puerto = 9080;
         Socket servidor;
         DataInputStream entrada;
         DataOutputStream salida;

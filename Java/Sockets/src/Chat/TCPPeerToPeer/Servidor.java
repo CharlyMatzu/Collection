@@ -77,7 +77,7 @@ public class Servidor extends Thread{
                 frmServidor.recibirMensaje( msj );
                 
                 //Cierra conexion con cliente
-                //socket.close();
+                socket.close();
                
                 
             } catch (IOException e) {
