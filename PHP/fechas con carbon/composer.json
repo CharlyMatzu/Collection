@@ -1,0 +1,15 @@
+{
+    "name": "pruebas/fechas",
+    "description": "probando la libreria carbon",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Carlos Zuñiga",
+            "email": "carlosrozuma@gmail.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^1.22"
+    }
+}

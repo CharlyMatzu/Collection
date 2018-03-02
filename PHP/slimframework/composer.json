@@ -1,0 +1,12 @@
+{
+    "name": "charly/slim-f",
+    "authors": [
+        {
+            "name": "Carlos Zuñiga",
+            "email": "carlosrozuma@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.0"
+    }
+}
