@@ -1,0 +1,5 @@
+RewriteEngine on
+
+RewriteCond %{SCRIPT_FILENAME} !-d  # Directorios
+RewriteCond %{SCRIPT_FILENAME} !-f  # Archivos
+

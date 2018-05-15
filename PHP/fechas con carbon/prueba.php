@@ -43,7 +43,7 @@
 </head>
 <body>
 	<h1>Fechas utilizando Carbon</h1>
-	<a href="carbon.nesbot.com/docs/">Carbon PHP</a>
+	<a href="https://carbon.nesbot.com/docs/">Carbon PHP</a>
 
 	<h2>Fecha actual</h2>
 	<p>Fecha con Carbon::today() <?= Carbon::today() ?></p>	
@@ -87,6 +87,18 @@
 		<br>
 		<strong><?= Carbon::today()->format("w"); ?></strong>
 	</p>
+
+	<h3>Unix</h3>
+    <p>con Carbon::now()->timestamp</p>
+    <?php
+		//https://www.epochconverter.com/
+        //Define zona horaria
+        $hoy = Carbon::now('America/Phoenix');
+        echo "fecha $hoy <br>";
+        echo "Unix $hoy->timestamp ";
+
+        //echo Carbon::now()->timestamp;
+    ?>
 
 
 	

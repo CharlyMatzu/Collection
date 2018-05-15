@@ -1,0 +1,13 @@
+{
+    "name": "charly/jwt",
+    "description": "test",
+    "authors": [
+        {
+            "name": "Carlos Zuñiga",
+            "email": "carlosrozuma@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^5.0"
+    }
+}
