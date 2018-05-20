@@ -10,6 +10,7 @@ app.config(function ($routeProvider) {
             controller: "RepoController",
             templateUrl: "templates/repo.html"
         })
+        .otherwise("/"); //para cualquier otra ruta
 });
 
 app.controller('RepoController', function($scope, $routeParams){
