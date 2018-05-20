@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- Firebase libreria -->
+	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+	<!--<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>-->
+</head>
+<body>
+
+	<h1 id="texto"></h1>
+
+	<script>
+		var config = {
+			apiKey: "AIzaSyAeWRtG4Xou4aHOBX_yX62y1fJbqInN15E",
+			authDomain: "pruebas-b1be2.firebaseapp.com",
+			databaseURL: "https://pruebas-b1be2.firebaseio.com",
+			storageBucket: "pruebas-b1be2.appspot.com"
+		};
+		firebase.initializeApp(config);
+
+		// Get a reference to the database service
+		var database = firebase.database();
+		var ref = database.ref().child('nombre');
+		var elemento = document.getElementById("texto");
+		// Agrega texto (ECMA)
+		 ref.on( 'value', snap => elemento.innerHTML = snap.val() );
+	</script>
+</body>
+</html>

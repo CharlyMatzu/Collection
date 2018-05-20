@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	
+	<p id="texto"></p>
+	<a href="#carlos">Carlos</a>
+	<a href="#enrique">enrique</a>
+	<a href="#jose">jose</a>
+	<script>
+		
+		// var hash = window.location.hash;
+		var hash = location.hash;
+		switch( hash ){
+			case '#carlos': mostrar("carlos"); break;
+			case '#enrique': mostrar("enrique"); break;
+			case '#jose': mostrar("jose"); break;
+
+			default: mostrar("default"); break;
+		}
+
+		function mostrar(nombre){
+			document.getElementById("texto").innerHTML = nombre;
+		}
+
+	</script>
+	
+</body>
+</html>

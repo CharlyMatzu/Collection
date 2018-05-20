@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<style>
+		.cubo{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			background-color: peru;
+		}
+	</style>
+
+	<h2>Esta es una prueba de un callback para animacion infinta usando "animate" de JQuery</h2>
+	<div id="cubo" class="cubo"></div>
+
+	<script>
+		$(document).ready(function(){
+			iniciar( moverDerecha );
+		});
+
+
+		function iniciar(callback){
+			callback();
+		}
+
+		function moverDerecha(){
+			console.log("derecha");
+			$("#cubo").animate({
+				left: "+=1000",
+			}, 1000, moverIzquierda);
+		}
+
+		function moverIzquierda(){
+			console.log("izquierda");
+			$("#cubo").animate({
+				left: "-=1000",
+			}, 1000, moverDerecha);
+		}
+
+		/*
+		http://api.jquery.com/animate/
+		NOTA: la funcion animate tiene 4 parametros (3 opcionales) 
+		.animate( properties [, duration ] [, easing ] [, complete ] )
+			properties
+				Type: PlainObject
+				An object of CSS properties and values that the animation will move toward.
+			
+			duration (default: 400)
+				Type: Number or String
+				A string or number determining how long the animation will run.
+			
+			easing (default: swing)
+				Type: String
+				A string indicating which easing function to use for the transition.
+			
+			complete (puede ser un callback)
+				Type: Function()
+				A function to call once the animation is complete, called once per matched element.
+		*/
+	</script>
+</body>
+</html>

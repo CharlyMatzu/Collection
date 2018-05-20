@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="fa/css/font-awesome.min.css">
+	<link rel="stylesheet" href="font-awesome-animation.min.css">
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<style>
+		.texto{
+			width: 700px;
+			margin: 0 auto;
+		}
+		.texto p{
+			font-size: 1.2em;
+		}
+
+		.overlay{
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(0,0,0,.7);
+			
+			/*Alineacion de loader*/
+			/*display: flex;*/
+			align-items: center;
+			justify-content: center;
+			/*opacity: 0;*/
+			display: none;
+		}
+
+		.overlay .loader .icon{
+			color: #fff;
+		}
+	</style>
+
+	<div class="texto">
+		<button id="show">Mostrar</button>
+		<h1>Texto de ejemplo por atras</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div id="overlay-loader" class="overlay">
+		<div class="loader">
+			<i class="icon fa fa-spinner fa-spin fa-5x fa-fw"></i>
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+
+	<!-- <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+	<span class="sr-only">Loading...</span>
+
+	<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+	<span class="sr-only">Loading...</span>
+
+	<i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+	<span class="sr-only">Loading...</span>
+
+	<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+	<span class="sr-only">Loading...</span> -->
+
+	<script>
+		$(document).ready(function(){
+
+			$("#show").click(function(){
+				$("#overlay-loader").css("display", "flex");
+				setTimeout(function(){
+					$("#overlay-loader").css("display", "none");
+				}, 3000);
+			});
+
+		});
+	</script>
+</body>
+</html>

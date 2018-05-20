@@ -1,0 +1,65 @@
+.snackbar {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: none;
+  background-color: #212121;
+  color: #fff;
+  padding: 20px;
+  bottom: 0px; }
+  .snackbar .snackbar__message {
+    display: inline; }
+  @media (min-width: 680px) {
+    .snackbar {
+      max-width: 600px;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      border-radius: 4px; } }
+
+.snackbar--success {
+  background-color: #39B54A; }
+
+.snackbar--warning {
+  background-color: #FBF158;
+  color: #212121; }
+
+.snackbar--danger {
+  background-color: #FC5050; }
+
+.snackbar--isActive {
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0; }
+  to {
+    bottom: 20px;
+    opacity: 1; } }
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0; }
+  to {
+    bottom: 20px;
+    opacity: 1; } }
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 20px;
+    opacity: 1; }
+  to {
+    bottom: 0;
+    opacity: 0; } }
+
+@keyframes fadeout {
+  from {
+    bottom: 20px;
+    opacity: 1; }
+  to {
+    bottom: 0;
+    opacity: 0; } }
