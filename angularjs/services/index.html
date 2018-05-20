@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="ToDo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <script src="vendor/angularjs/angularjs.min.js"></script>
+    <script src="vendor/angularjs/angular-local-storage.min.js"></script>
+    <script src="app/app.js"></script>
+</head>
+<body ng-controller="TodoController">
+
+
+    <div class="container">
+        <form ng-submit="addAct()">
+            <input type="text" ng-model="newAct.descripcion" class="form-control">
+            <input type="datetime-local" ng-model="newAct.fecha" class="form-control">
+
+            <button class="btn btn-primary">Guardar actividad</button>
+
+            <button class="btn btn-danger" ng-click="clean()">Limpiar lista</button>
+        </form>
+
+        <br><br><br>
+        <h3>Lista</h3>
+        <p ng-hide="todo.lenght > 0">Sin elementos registrados</p>
+        <ul ng-show="todo.length > 0">
+            <li ng-repeat="item in todo">
+                {{item.descripcion}} -
+                {{item.fecha | date: 'short'}}
+                <a href="#" ng-click="removeAct(item)" style="color: red">Eliminar</a>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+</html>
