@@ -9,17 +9,18 @@ app.factory('TodoService', function(localStorageService){
 
     //Verificar localstorage para ver si ya hay datos guardados
     if( localStorageService.get( todoService.key ) )
-        $scope.activities = localStorageService.get( todoService.key );
+        todoService.activities = localStorageService.get( todoService.key );
     else
-        $scope.activities = [];
+        todoService.activities = [];
 
     //---FUNCIONES
     todoService.add = function (newAct) {
         todoService.activities.push( newAct );
+        todoService.uploadLocalStorage();
     };
     //Reemplazo del watcher
     todoService.uploadLocalStorage = function () {
-        localStorageService.set(todoService.key, $scope.activities);
+        localStorageService.set(todoService.key, todoService.activities);
     };
     todoService.clean = function () {
         todoService.activities = [];
@@ -43,7 +44,7 @@ app.factory('TodoService', function(localStorageService){
         return todoService.getAll();
     };
 
-    return todoService();
+    return todoService;
 });
 
 app.controller('TodoController', function($scope, TodoService){
@@ -55,8 +56,8 @@ app.controller('TodoController', function($scope, TodoService){
         TodoService.add( $scope.newAct );
         $scope.newAct = {};
     };
-    $scope.remove = function (item) {
-        $scope.todo = TodoService.remove(item);
+    $scope.removeAct = function (item) {
+        $scope.todo = TodoService.removeItem(item);
     };
     $scope.clean = function () {
         $scope.todo = TodoService.clean();
