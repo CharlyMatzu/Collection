@@ -47,7 +47,7 @@ app.factory('TodoService', function(localStorageService){
     return todoService;
 });
 
-app.controller('TodoController', function($scope, TodoService){
+app.controller('EventController', function($scope, TodoService){
 
     $scope.todo = TodoService.getAll();
     $scope.newAct = {};
