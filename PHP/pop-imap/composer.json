@@ -1,0 +1,10 @@
+{
+    "name": "carlos/pop-imap",
+    "authors": [
+        {
+            "name": "Carlos R. Zuñiga",
+            "email": "carlosrozuma@gmail.com"
+        }
+    ],
+    "require": {}
+}

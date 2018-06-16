@@ -1,0 +1,12 @@
+{
+    "name": "carlos/monolog",
+    "authors": [
+        {
+            "name": "Carlos R. Zuñiga",
+            "email": "carlosrozuma@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.23"
+    }
+}
