@@ -1,0 +1,14 @@
+<h1>Main view</h1>
+<p>Vista desde route</p>
+
+<ul>
+    <li><a href="#!/default">Default</a></li>
+    <li><a href="#!/first">first</a></li>
+    <li><a href="#!/second">second</a></li>
+</ul>
+
+<p ng-if="showDef">Ninguna por defecto</p>
+
+<div ng-if="showFirst" ng-include="'partials/first/firstPartial.html'"></div>
+
+<div ng-if="showSecond" ng-include="'partials/second/secondPartial.html'"></div>
