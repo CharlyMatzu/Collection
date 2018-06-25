@@ -54,7 +54,7 @@ angular.module('myApp', ['ngRoute'])
 
                 //Retornamos promesa, ya que esta llamara al callback una vez obtenga los datos
                 return promise;
-            }
+            },
         }
     })
 
@@ -72,13 +72,15 @@ angular.module('myApp', ['ngRoute'])
             promise
                 .then(
                     function(data){
-                        $scope.data = data;
-                        console.log("Datos obtenidos");
-                    },
-                    function(message){
-                        console.log("Mensaje: "+message);
+                        console.log("Primera promesa");
+                        //Se llama de nuevo a la funcion lo que regresa otra promesa y se encadena
+                        return LoadFactory.getData();
                     }
                 )
+                .then(function(data){
+                    $scope.data = data;
+                    console.log("Segunda promesa");
+                })
                 .finally(function() {
                     console.log('Finished at:', new Date())
                 });
