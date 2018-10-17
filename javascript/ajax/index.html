@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #request{
+            padding-left: 20px;
+        }
+        .item{
+            position: relative;
+            font-family: Arial, Calibri;
+            margin-bottom: 5px;
+        }
+        .item .title{
+            font-weight: bold;
+            /* display: block; */
+            cursor: pointer;
+        }
+        .item .title:hover{
+            color: rgb(255, 138, 138);
+        }
+        .item::after{
+            content: ">";
+            position: absolute;
+            top: 0;
+            left: -15px;
+            font-weight: bold;
+        }
+        .item > .result{
+            padding: 30px 10px;
+            border-radius: 5px;
+            /* height: 0; */
+            /* overflow: hidden; */
+            background-color: #ebebeb;
+        }
+    </style>
+    
+    <span id="uri"></span>
+    <input type="text" id="path" value="">
+    <button onclick="test()">PROBAR</button>
+    <select name="method" id="method">
+        <option value="GET">GET</option>
+        <option value="POST">POST</option>
+        <!-- <option value="PUT">PUT</option>
+        <option value="GET">GET</option>
+        <option value="GET">GET</option> -->
+    </select>
+    <br><br>
+    <div id="request">
+        <!-- <div class="item">
+            <span class='title'>TITULO</span>
+            <div class="result">{asdasdsd}</div>
+        </div> -->
+    </div>
+
+    <script src="jquery.js"></script>
+    <script>
+
+        // var uri = "http://209.197.251.153:10090/api/test/v1/";
+        var uri = "http://api.localhost/v1/token";
+        // var uri = "http://sb7.compass-technologies.com:10090/api/equa/";
+        // var uri = "http://192.168.2.248/api/v1/";
+        
+        $(document).ready(function(){
+            $('#uri').html(uri);
+        });
+
+
+        function test(){
+            $('#uri').html(uri);
+            var path = $('#path').val();
+            var method = $('#method').val();
+            var url = uri+path;
+
+            $.ajax({
+                url: url,
+
+                method: method,
+                // headers: {
+                //     "Content-Type": "application/json",
+                // },
+                data: {
+                    api_user: 	"test",
+                    api_key:	"123456",
+                    grant_type:	"password"
+                },
+                
+                // method: 'GET',
+                // headers: {
+                //     "Content-Type": "application/json",
+                //     "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1MzY2MTgyMjMsImV4cCI6MTUzNjY1NDIyMywiaXNzIjoiZW1waGFzeXMiLCJzdWIiOiJlbXBoYXN5c0BtYWlsLmNvbSIsImF1ZCI6Imh0dHA6XC9cL2NvbXBhc3MtdGVjaG5vbG9naWVzLmNvbSIsImRhdGEiOnsiY2xpZW50IjoidGVzdCIsInNlY3JldCI6IjEyMzQ1NiJ9fQ.IRb-DWG-b4ODyGupWgWUNuez5RCUZK565AMSxpFrYrASZh16rVi5-nHaQitfZWEcv-jhB-xKQRxBzbqOCWNTlu9dD-t_RjFHecHQ-qbfj6Gz29jF6xKY98MuolpIEKXl02T3ozcaJ13WYDvEplwv8q5ENGCf9VPHegahnR9soFw"
+                // },
+                
+
+                success: function(response){
+                    console.log("Success");
+                    // console.log(response);
+                },
+                error: function(response){
+                    console.log("Error");
+                    // console.log(response);
+                },
+                complete: function(response){
+                    console.log("Response Status: "+ response.status +": "+ response.statusText);
+                    console.log( response );
+                    //HTML append
+                    $('#request').append("<div class='item'><span class='title'>"+response.status +": "+ response.statusText +"</span><div class='result'>" + response.responseText + "</div></div><br>");
+                }
+
+            });
+        }
+
+        $('#request').on('click', '.title', function(event){
+            // $(event).children(".result").toggle();
+
+            //gets .item parent and after that gets .result children of that parent
+            $(this).parent(".item").children(".result").toggle();
+        });
+    </script>
+
+</body>
+</html>

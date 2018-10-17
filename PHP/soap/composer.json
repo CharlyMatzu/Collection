@@ -1,0 +1,12 @@
+{
+    "name": "emcor/soap",
+    "authors": [
+        {
+            "name": "Carlos R. Zúñiga",
+            "email": "carlosrozuma@gmail.com"
+        }
+    ],
+    "require": {
+        "econea/nusoap": "~0.9.5.1"
+    }
+}
