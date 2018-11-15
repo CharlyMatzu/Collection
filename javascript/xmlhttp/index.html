@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://ghibliapi.herokuapp.com/films/58611129-2dbc-4a81-a72f-77ddfc1b1b49", true); // Method, url, async...
+        // callback
+        xhr.onreadystatechange = function() {
+            // RESPONSE
+            if ( xhr.readyState === XMLHttpRequest.DONE ) {
+                // Status
+                if( xhr.status === 200 ){
+                    // Response text
+                    console.log( xhr.responseText );
+                }
+            }
+            // LOADING
+            else if( xhr.readyState === XMLHttpRequest.LOADING ){
+                console.log( "LOADING" );
+            }
+        };
+        xhr.send(); // data
+    </script>
+    
+</body>
+</html>
