@@ -1,25 +1,31 @@
 const express = require('express');
 const app = express();
+const hbs = require('hbs');
+require('./hbs/helpers');
 
-// carpeta principal para render
-app.use(express.static('./public'))
+// partials
+hbs.registerPartials('./views/partials');
 // Template engine principal
-app.set('view engine', 'pug');
+app.set('view engine', 'hbs');
+
 
 // Ruta de renderizado
 app.get('/', (req, res) => {
     res.render('home', {
-        name: 'Carlos',
-        year: new Date().getFullYear()
+        title: 'HOME PAGE',
+        name: 'Carlos'
     });
 });
 
-// app.get('/', (req, res) => {
-//     res.send("Hola mundo");
-// });
+app.get('/about', (req, res) => {
+    res.render('about', {
+        title: 'ABOUT PAGE',
+        desc: 'Lorem'
+    });
+});
 
 
-
-app.listen(8080, () => {
-    console.log("Running in 8080");
+const PORT = 8080;
+app.listen(PORT, () => {
+    console.log(`Running in http://localhost:${PORT}`);
 });
